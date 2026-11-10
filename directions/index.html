@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en-GB" class="no-js" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Compare directions · prototype</title>
+<meta name="description" content="Three visual directions applied to the same content.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0F2540">
+<script>try{var t=localStorage.getItem('hat-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@400;500;600&family=Noto+Serif+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Source+Sans+3:wght@400;600&family=Noto+Naskh+Arabic&family=Noto+Kufi+Arabic:wght@500&family=Inter:wght@750&display=swap">
+<style>
+.dir{border-radius:12px;overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column}
+.dir .top{padding:44px 34px 40px;background:var(--d-dark);color:var(--d-light)}
+.dir .top .e{font:600 .72rem/1 var(--d-ui);letter-spacing:.16em;text-transform:uppercase;color:var(--d-accent)}
+.dir .top h3{font-family:var(--d-head);font-weight:var(--d-hw);font-size:clamp(2.2rem,3.4vw,3rem);line-height:1.02;letter-spacing:var(--d-track);color:var(--d-light);margin:14px 0 14px}
+.dir .top p{font-family:var(--d-text);color:var(--d-muted-on-dark);font-size:1.05rem;margin:0 0 22px}
+.dir .b1{display:inline-block;padding:12px 18px;border-radius:4px;background:var(--d-accent);color:var(--d-dark);font:600 .88rem var(--d-ui);text-decoration:none}
+.dir .body{background:var(--d-bg);color:var(--d-ink);padding:30px 34px;flex:1}
+.dir .kick{font:600 .7rem var(--d-ui);letter-spacing:.14em;text-transform:uppercase;color:var(--d-link)}
+.dir .body h4{font-family:var(--d-head2);font-weight:600;font-size:1.3rem;line-height:1.3;margin:8px 0 8px;color:var(--d-head-ink)}
+.dir .body p{font-family:var(--d-text);font-size:1rem;line-height:1.6;color:var(--d-ink)}
+.dir .ar{font-family:var(--d-ar);font-size:1.7rem;line-height:1.8;color:var(--d-head-ink);text-align:right;margin:18px 0 4px}
+.dir .sw{display:flex;gap:6px;margin-top:18px}.dir .sw span{width:30px;height:30px;border-radius:50%;border:1px solid rgba(0,0,0,.08)}
+.dir .spec{font:500 .8rem/1.5 var(--f-ui);color:var(--muted);padding:14px 34px;background:var(--surface);border-top:1px solid var(--line)}
+.dir-a{--d-dark:#0F2540;--d-light:#F6F1E7;--d-accent:#D8B36A;--d-muted-on-dark:#A9B4C2;--d-bg:#F6F1E7;--d-ink:#1B2430;--d-head-ink:#0F2540;--d-link:#8A5A14;--d-head:"Noto Serif Display",serif;--d-head2:"Source Serif 4",serif;--d-hw:500;--d-track:-.02em;--d-text:"Source Serif 4",serif;--d-ui:"Inter",sans-serif;--d-ar:"Amiri",serif}
+.dir-b{--d-dark:#2F3B1F;--d-light:#F3EFE4;--d-accent:#E2C48A;--d-muted-on-dark:#CFD3BC;--d-bg:#F3EFE4;--d-ink:#1E211B;--d-head-ink:#2F3B1F;--d-link:#9B3F22;--d-head:"EB Garamond",serif;--d-head2:"EB Garamond",serif;--d-hw:500;--d-track:-.01em;--d-text:"EB Garamond",serif;--d-ui:"Source Sans 3",sans-serif;--d-ar:"Noto Naskh Arabic",serif}
+.dir-c{--d-dark:#15171A;--d-light:#FAF7F2;--d-accent:#F0787E;--d-muted-on-dark:#A7ACB3;--d-bg:#FAF7F2;--d-ink:#15171A;--d-head-ink:#15171A;--d-link:#A51C24;--d-head:"Inter",sans-serif;--d-head2:"Inter",sans-serif;--d-hw:750;--d-track:-.035em;--d-text:"Source Serif 4",serif;--d-ui:"Inter",sans-serif;--d-ar:"Noto Kufi Arabic",sans-serif}
+.dirs{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}@media(max-width:1000px){.dirs{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="proto-ribbon">Design prototype, round 1 · Real content from the archive; <span class="draft">highlighted text</span> is draft wording to confirm with Hamza · <a href="../styleguide/index.html">Style guide</a> · <a href="../directions/index.html">Compare directions</a></div>
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="wordmark" href="../index.html">Hamza <i>Andreas</i> Tzortzis</a>
+    <nav class="nav" aria-label="Main"><a href="../books/the-divine-reality/index.html">Books</a><a href="../essays/index.html">Essays</a><a href="../soon/index.html?p=watch">Watch</a><a href="../soon/index.html?p=podcast">Podcast</a><a href="../soon/index.html?p=speaking">Speaking</a><a href="../about/index.html">About</a></nav>
+    <div class="tools">
+      <button class="icon-btn" type="button" data-search-open aria-label="Search (press /)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch colour theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z"/></svg></button>
+      <a class="btn btn-gold btn-sub" href="../index.html#newsletter">Subscribe</a>
+      <button class="icon-btn menu-btn" type="button" data-menu-open aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="sheet" role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="top"><a class="wordmark" href="../index.html">Hamza <i>Andreas</i> Tzortzis</a><button class="icon-btn" type="button" data-menu-close aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+  <button class="btn btn-ghost search" type="button" data-search-open style="color:var(--parchment);border-color:rgba(246,241,231,.4)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg> Search essays and pages</button>
+  <nav aria-label="Main"><a href="../books/the-divine-reality/index.html">Books</a><a href="../essays/index.html">Essays</a><a href="../soon/index.html?p=watch">Watch</a><a href="../soon/index.html?p=podcast">Podcast</a><a href="../soon/index.html?p=speaking">Speaking</a><a href="../about/index.html">About</a><a href="../soon/index.html?p=clarifications">Clarifications</a></nav>
+  <div style="display:flex;gap:10px;margin-top:auto;padding-top:24px"><a class="btn btn-gold" style="flex:1;margin:0" href="../index.html#newsletter" data-menu-close>Subscribe to letters</a><button class="btn btn-ghost" type="button" data-theme-toggle style="margin:0;color:var(--parchment);border-color:rgba(246,241,231,.4)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z"/></svg> Theme</button></div>
+</div>
+<div class="search-panel" role="dialog" aria-modal="true" aria-label="Search">
+  <div class="box">
+    <label class="sr-only" for="q">Search</label>
+    <input id="q" class="search-input" type="search" placeholder="Search essays, lectures and pages…" autocomplete="off">
+    <ul class="search-results"></ul>
+    <p class="search-hint">Tip: “Quran”, “Qur’an” and “Qurʾān” all match. Press Esc to close.</p>
+  </div>
+</div>
+<main id="main">
+<section class="page-head"><div class="wrap"><p class="eyebrow">Visual directions</p><h1 class="h1">Three directions, same content</h1>
+<p class="lede measure" style="margin-top:14px">The full prototype uses Direction A. These panels show how the hero, an essay card and an Arabic line look in each, so the choice can be made side by side.</p></div></section>
+<section class="wrap dirs" style="padding-bottom:var(--section)">
+<article class="dir dir-a">
+  <div class="top"><span class="e">A · Manuscript & Midnight · recommended</span><h3>Hamza Andreas Tzortzis</h3><p>Making a compassionate, rational case for God, the Qur’an and the meaning of life.</p><a class="b1" href="#">Read The Divine Reality</a></div>
+  <div class="body"><span class="kick">Theology &amp; Philosophy</span><h4>Divine Link: The Argument from Dependency</h4><p>Imagine you walk out of your house and on your street you find a row of dominoes that stretch far beyond what your eyes can see.</p>
+  <p class="ar" lang="ar" dir="rtl">وَرَحْمَتِي وَسِعَتْ كُلَّ شَيْءٍ</p><div class="sw"><span style="background:#0F2540"></span><span style="background:#F6F1E7"></span><span style="background:#8A5A14"></span><span style="background:#D8B36A"></span><span style="background:#7A2318"></span></div></div>
+  <div class="spec"><b style="color:var(--heading)">A library at night: scholarly, warm, unhurried.</b><br>Noto Serif Display, Source Serif 4, Inter, Amiri. Closest to what you liked in the Yasir Qadhi site, with authority from navy and warmth from parchment and brass.</div>
+</article>
+<article class="dir dir-b">
+  <div class="top"><span class="e">B · Olive & Limestone</span><h3>Hamza Andreas Tzortzis</h3><p>Making a compassionate, rational case for God, the Qur’an and the meaning of life.</p><a class="b1" href="#">Read The Divine Reality</a></div>
+  <div class="body"><span class="kick">Theology &amp; Philosophy</span><h4>Divine Link: The Argument from Dependency</h4><p>Imagine you walk out of your house and on your street you find a row of dominoes that stretch far beyond what your eyes can see.</p>
+  <p class="ar" lang="ar" dir="rtl">وَرَحْمَتِي وَسِعَتْ كُلَّ شَيْءٍ</p><div class="sw"><span style="background:#2F3B1F"></span><span style="background:#F3EFE4"></span><span style="background:#9B3F22"></span><span style="background:#E2C48A"></span><span style="background:#DDE0CB"></span></div></div>
+  <div class="spec"><b style="color:var(--heading)">A Mediterranean courtyard: rooted, humane, traditional.</b><br>EB Garamond, Source Sans 3, Noto Naskh Arabic. The warmest and most bookish, and a quiet nod to the Greek family name. Green carries strong “Islamic organisation” associations.</div>
+</article>
+<article class="dir dir-c">
+  <div class="top"><span class="e">C · Lecture Hall</span><h3>Hamza Andreas Tzortzis</h3><p>Making a compassionate, rational case for God, the Qur’an and the meaning of life.</p><a class="b1" href="#">Read The Divine Reality</a></div>
+  <div class="body"><span class="kick">Theology &amp; Philosophy</span><h4>Divine Link: The Argument from Dependency</h4><p>Imagine you walk out of your house and on your street you find a row of dominoes that stretch far beyond what your eyes can see.</p>
+  <p class="ar" lang="ar" dir="rtl">وَرَحْمَتِي وَسِعَتْ كُلَّ شَيْءٍ</p><div class="sw"><span style="background:#15171A"></span><span style="background:#FAF7F2"></span><span style="background:#A51C24"></span><span style="background:#F0787E"></span><span style="background:#A7ACB3"></span></div></div>
+  <div class="spec"><b style="color:var(--heading)">Podium and spotlight: direct, modern, ready for debate.</b><br>Inter 750, Source Serif 4, Noto Kufi Arabic. The crimson echoes Sapience’s red and it is the easiest to build, but it is the least warm and the furthest from the brief.</div>
+</article>
+</section>
+</main>
+<footer class="site-footer on-dark">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="wordmark" href="../index.html">Hamza <i>Andreas</i> Tzortzis</a>
+        <p style="margin:14px 0 0;max-width:34ch">Author of <i>The Divine Reality</i>. Founder &amp; CEO of <a href="https://www.sapienceinstitute.org/" class="ext">Sapience Institute</a>.</p>
+        <div class="socials"><a href="https://www.facebook.com/HamzaAndreasTzortzis/" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.6-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.9v3h2.6V21z"/></svg></a><a href="https://x.com/HATzortzis" aria-label="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.8 3h3.1l-6.8 7.8 8 10.2h-6.3l-4.9-6.4L5.3 21H2.2l7.3-8.3L1.8 3h6.4l4.4 5.9zm-1.1 16.2h1.7L7.4 4.7H5.6z"/></svg></a><a href="https://instagram.com/hatzortzis" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7.4a4.6 4.6 0 1 0 0 9.2 4.6 4.6 0 0 0 0-9.2zm0 7.6a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm4.8-8.9a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2zM12 3.6c2.7 0 3 0 4.1.1 2.7.1 4 1.4 4.1 4.1.1 1.1.1 1.4.1 4.2s0 3-.1 4.1c-.1 2.7-1.4 4-4.1 4.1-1.1.1-1.4.1-4.1.1s-3 0-4.1-.1c-2.7-.1-4-1.4-4.1-4.1C3.6 15 3.6 14.7 3.6 12s0-3 .1-4.1C3.8 5.1 5.1 3.8 7.8 3.7 9 3.6 9.3 3.6 12 3.6zM12 2c-2.7 0-3.1 0-4.2.1C4.2 2.2 2.2 4.2 2.1 7.8 2 8.9 2 9.3 2 12s0 3.1.1 4.2c.2 3.6 2.1 5.6 5.7 5.7 1.1.1 1.5.1 4.2.1s3.1 0 4.2-.1c3.6-.2 5.6-2.1 5.7-5.7.1-1.1.1-1.5.1-4.2s0-3.1-.1-4.2c-.2-3.6-2.1-5.6-5.7-5.7C15.1 2 14.7 2 12 2z"/></svg></a><a href="https://www.youtube.com/@HamzaTzortzisOfficial" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2 26 26 0 0 0 2 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.8 1.8c1.6.4 7.8.4 7.8.4s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.8zM10 15.2V8.8l5.2 3.2z"/></svg></a></div>
+      </div>
+      <div><h4>Read</h4><ul><li><a href="../essays/index.html">Essays &amp; lectures</a></li><li><a href="../books/the-divine-reality/index.html">The Divine Reality</a></li><li><a href="../index.html#start">Start here</a></li><li><a href="../index.html#topics">Topics</a></li></ul></div>
+      <div><h4>Watch &amp; listen</h4><ul><li><a href="../soon/index.html?p=watch">Debates &amp; lectures</a></li><li><a href="../soon/index.html?p=podcast">Podcast &amp; conversations</a></li><li><a href="https://www.youtube.com/@HamzaTzortzisOfficial" class="ext">YouTube</a></li></ul></div>
+      <div><h4>About</h4><ul><li><a href="../about/index.html">Biography</a></li><li><a href="../soon/index.html?p=speaking">Speaking</a></li><li><a href="../about/index.html#media">Media kit</a></li><li><a href="../soon/index.html?p=clarifications">Clarifications</a></li><li><a href="../soon/index.html?p=contact">Contact</a></li></ul></div>
+    </div>
+    <div class="foot-base">
+      <span>© 2026 Hamza Andreas Tzortzis · Design prototype</span>
+      <nav aria-label="Legal"><a href="../soon/index.html?p=legal">Privacy</a><a href="../soon/index.html?p=legal">Cookies</a><a href="../soon/index.html?p=legal">Accessibility</a><a href="../soon/index.html?p=legal">Terms</a></nav>
+    </div>
+  </div>
+</footer>
+<script src="../assets/search-index.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

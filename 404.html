@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Page not found · design prototype</title>
+<style>
+  body { margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center; background: #F6F1E7; color: #1B2430;
+         font: 18px/1.6 Georgia, 'Times New Roman', serif; }
+  main { max-width: 34rem; padding: 2rem 1.5rem; text-align: center; }
+  h1 { font-weight: normal; font-size: 2.2rem; color: #0F2540; margin: 0 0 .5rem; }
+  p { margin: 0 0 1rem; color: #56606E; }
+  a { color: #8A5A14; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Page not found</h1>
+  <p>This page isn't part of the design prototype yet.</p>
+  <p><a id="home" href="index.html">Go to the prototype homepage</a></p>
+</main>
+<script>
+  // GitHub Pages serves this file at any missing path; point the link at the site root (the repository's sub-path)
+  var parts = location.pathname.split('/').filter(Boolean);
+  if (location.hostname.endsWith('github.io') && parts.length) document.getElementById('home').href = '/' + parts[0] + '/';
+</script>
+</body>
+</html>
